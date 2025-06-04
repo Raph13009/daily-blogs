@@ -4,6 +4,13 @@ import path from 'path';
 import matter from 'gray-matter';
 import Base from '../../layouts/Base.astro';
 import { marked } from 'marked';
+import { remark } from 'remark';
+import { rehype } from 'rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeStringify from 'rehype-stringify';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeImage from '../../plugins/rehype-image.js';
 
 export async function getStaticPaths() {
   const postsDirectory = './posts';
@@ -15,18 +22,61 @@ const { slug } = Astro.params;
 const filePath = `./posts/${slug}.md`;
 const fileContent = fs.readFileSync(filePath, 'utf-8');
 const { data, content } = matter(fileContent);
-const html = marked(content);
+
+// Transformer le Markdown en HTML avec les plugins
+const file = await remark()
+  .use(remarkParse)
+  .use(remarkRehype, { allowDangerousHtml: true })
+  .use(rehypeRaw)
+  .use(rehypeImage)
+  .use(rehypeStringify)
+  .process(content);
+
+const html = String(file);
 ---
 <Base>
   <span slot="title">{data.title}</span>
   <div class="flex min-h-screen">
     <main class="flex-1 flex items-center justify-center px-8 max-md:px-2 max-md:py-8">
       <article class="w-full max-w-2xl bg-white rounded-2xl px-8 py-12 shadow border border-[#ece7e1] max-md:px-2 max-md:py-6">
-        <h1 class="text-4xl font-serif font-bold mb-2">{data.title}</h1>
-        <div class="text-[#b3a89c] text-sm mb-6">{data.date}</div>
-        {data.image && <img src={data.image} alt="" class="mb-8 rounded-xl w-full object-cover" />}
-        <div class="prose prose-lg max-w-none prose-blockquote:border-l-4 prose-blockquote:border-[#b3a89c] prose-blockquote:pl-4 prose-blockquote:italic prose-a:underline prose-a:decoration-[#b3a89c] prose-a:underline-offset-2 prose-a:font-medium prose-strong:font-semibold prose-hr:my-8 prose-img:rounded-xl prose-img:my-6 prose-img:mx-auto prose-img:w-full prose-img:max-h-[400px] prose-img:object-cover prose-p:leading-relaxed prose-p:text-[#3a3732]" set:html={html} />
+        
+        <!-- 🔙 FLECHE RETOUR -->
+        <a href="/" class="inline-flex items-center text-sm text-[#b3a89c] hover:text-[#3a3732] transition-all group mb-6">
+          <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to home
+        </a>
+
+        <!-- 🟢 TITRE -->
+        <h1 class="text-2xl font-serif font-semibold text-[#3a3732] mb-1">
+          {data.title}
+        </h1>
+
+        <!-- 🟤 DESCRIPTION -->
+        {data.description && (
+          <p class="text-base font-sans text-[#9b8f85] mb-1 leading-snug">
+            {data.description}
+          </p>
+        )}
+
+        <!-- 📅 DATE -->
+        <div class="text-sm text-[#c7beb7] mb-6">
+          {data.date}
+        </div>
+
+        <!-- 🖼 IMAGE PRINCIPALE -->
+        {data.image && (
+          <img src={data.image} alt="" class="mb-8 rounded-xl w-full object-cover" />
+        )}
+
+        <!-- 📄 CONTENU MARKDOWN -->
+        <div class="prose prose-base max-w-none text-[#6a6259] leading-relaxed 
+          prose-blockquote:border-l-4 prose-blockquote:border-[#b3a89c] prose-blockquote:pl-4 prose-blockquote:italic 
+          prose-a:underline prose-a:decoration-[#b3a89c] prose-a:underline-offset-2 prose-a:font-medium 
+          prose-strong:font-semibold prose-hr:my-8 
+          prose-p:text-[#3a3732]" set:html={html} />
       </article>
     </main>
   </div>
-</Base> 
+</Base>

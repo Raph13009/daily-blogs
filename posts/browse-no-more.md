@@ -7,7 +7,9 @@ image: "/browse-no-more.png"
 
 # I'm no longer browsing the web; I'm consuming AI answers instead.
 
-I love and adore today's so-called *AI answer engines*: tools like ChatGPT, Perplexity, Grok, Copilot, and Gemini. I use them at least a dozen times throughout the day, and I'm sure you use them frequently as well. Their convenience is undeniable.
+**I love and adore today's so-called** *AI answer engines*: tools like ChatGPT, Perplexity, Grok, Copilot, and Gemini. I use them at least a dozen times throughout the day, and I'm sure you use them frequently as well. Their convenience is undeniable.
+
+![Example cool](/images/imageTest.png)
 
 > Those magical detours defined our web experience, enriching us with insight and creativity while establishing human connections.
 
