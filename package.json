@@ -17,7 +17,8 @@
     "remark-gfm": "^3.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
-    "remark-smartypants": "^3.0.0"
+    "remark-smartypants": "^3.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "scripts": {
     "dev": "astro dev",

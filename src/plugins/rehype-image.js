@@ -1,26 +1,28 @@
-function visit(node, fn) {
-  fn(node);
-  if (node.children) {
-    node.children.forEach(child => visit(child, fn));
-  }
-}
+import { visit } from 'unist-util-visit';
 
 export default function rehypeImage() {
   return function transformer(tree) {
-    visit(tree, node => {
-      if (node.type === 'element' && node.tagName === 'img') {
-        node.properties = node.properties || {};
-        node.properties.class = `
-          mx-auto 
-          rounded-xl 
-          my-6 
-          w-full 
-          max-w-2xl 
-          sm:max-w-[500px] 
-          max-[640px]:max-w-[75vw] 
-          max-[640px]:mx-[-1rem] 
-          max-[640px]:rounded-none
-        `;
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName === 'img') {
+        const alt = node.properties?.alt || '';
+        const image = { ...node, properties: { ...node.properties, class: 'fullwidth' } };
+
+        const figureNode = {
+          type: 'element',
+          tagName: 'figure',
+          properties: { class: 'image-block' },
+          children: [
+            image,
+            {
+              type: 'element',
+              tagName: 'figcaption',
+              properties: { class: 'caption' },
+              children: [{ type: 'text', value: alt }]
+            }
+          ]
+        };
+
+        parent.children.splice(index, 1, figureNode);
       }
     });
   };
