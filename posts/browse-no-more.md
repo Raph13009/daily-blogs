@@ -13,6 +13,11 @@ image: "/browse-no-more.png"
 
 > Those magical detours defined our web experience, enriching us with insight and creativity while establishing human connections.
 
-Browsing with traditional search engines wasn't exactly seamless but you were in the driver's seat. You would occasionally end up on some obscure personal site or forum that was unexpectedly right up your alley.
+Browsing with traditional search engines wasn't exactly seamless but you were in the driver's seat.
+
+![Example cool](/images/imageTest2.png)
+
+
+You would occasionally end up on some obscure personal site or forum that was unexpectedly right up your alley.
 
 [Read more about this shift](https://paulstamatiou.com/browse-no-more) 

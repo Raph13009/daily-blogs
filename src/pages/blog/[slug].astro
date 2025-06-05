@@ -3,9 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Base from '../../layouts/Base.astro';
-import { marked } from 'marked';
 import { remark } from 'remark';
-import { rehype } from 'rehype';
+import rehype from 'rehype';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
@@ -23,7 +22,6 @@ const filePath = `./posts/${slug}.md`;
 const fileContent = fs.readFileSync(filePath, 'utf-8');
 const { data, content } = matter(fileContent);
 
-// Transformer le Markdown en HTML avec les plugins
 const file = await remark()
   .use(remarkParse)
   .use(remarkRehype, { allowDangerousHtml: true })
@@ -34,49 +32,42 @@ const file = await remark()
 
 const html = String(file);
 ---
+
 <Base>
   <span slot="title">{data.title}</span>
-  <div class="flex min-h-screen">
-    <main class="flex-1 flex items-center justify-center px-8 max-md:px-2 max-md:py-8">
-      <article class="w-full max-w-2xl bg-white rounded-2xl px-8 py-12 shadow border border-[#ece7e1] max-md:px-2 max-md:py-6">
-        
-        <!-- 🔙 FLECHE RETOUR -->
-        <a href="/" class="inline-flex items-center text-sm text-[#b3a89c] hover:text-[#3a3732] transition-all group mb-6">
-          <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to home
-        </a>
 
-        <!-- 🟢 TITRE -->
-        <h1 class="text-2xl font-serif font-semibold text-[#3a3732] mb-1">
-          {data.title}
-        </h1>
+  <main class="w-full px-4 sm:px-6 md:px-8 pt-20 pb-24 flex justify-center box-border">
+    <article class="max-w-2xl w-full box-border">
 
-        <!-- 🟤 DESCRIPTION -->
-        {data.description && (
-          <p class="text-base font-sans text-[#9b8f85] mb-1 leading-snug">
-            {data.description}
-          </p>
-        )}
+      <!-- 🔙 FLECHE RETOUR -->
+      <a href="/" class="inline-flex items-center text-sm text-[#b3a89c] hover:text-[#3a3732] transition-all group mb-6">
+        <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to home
+      </a>
 
-        <!-- 📅 DATE -->
-        <div class="text-sm text-[#c7beb7] mb-6">
-          {data.date}
-        </div>
+      <!-- 🟢 TITRE -->
+      <h1 class="text-3xl font-serif font-semibold text-[#3a3732] mb-2">{data.title}</h1>
 
-        <!-- 🖼 IMAGE PRINCIPALE -->
-        {data.image && (
-          <img src={data.image} alt="" class="mb-8 rounded-xl w-full object-cover" />
-        )}
+      <!-- 🟤 DESCRIPTION -->
+      {data.description && (
+        <p class="text-lg text-[#9c8e82] mb-2 leading-snug">{data.description}</p>
+      )}
 
-        <!-- 📄 CONTENU MARKDOWN -->
-        <div class="prose prose-base max-w-none text-[#6a6259] leading-relaxed 
-          prose-blockquote:border-l-4 prose-blockquote:border-[#b3a89c] prose-blockquote:pl-4 prose-blockquote:italic 
-          prose-a:underline prose-a:decoration-[#b3a89c] prose-a:underline-offset-2 prose-a:font-medium 
-          prose-strong:font-semibold prose-hr:my-8 
-          prose-p:text-[#3a3732]" set:html={html} />
-      </article>
-    </main>
-  </div>
+      <!-- 📅 DATE -->
+      <div class="text-sm text-[#c7beb7] mb-10">{data.date}</div>
+
+      <!-- 📄 CONTENU MARKDOWN -->
+      <div class="prose prose-lg max-w-none text-[#6a5f55] leading-relaxed 
+        prose-blockquote:border-l-4 prose-blockquote:border-[#b3a89c] prose-blockquote:pl-4 prose-blockquote:italic 
+        prose-a:underline prose-a:decoration-[#b3a89c] prose-a:underline-offset-2 prose-a:font-medium 
+        prose-strong:font-semibold prose-strong:text-[#7a6f66] prose-hr:my-8 
+        prose-p:text-[#6a5f55] 
+        prose-img:my-6 prose-img:mx-auto prose-img:object-cover prose-img:rounded-xl 
+        prose-img:w-full prose-img:max-w-2xl sm:prose-img:max-w-[500px] max-[640px]:prose-img:max-w-[85vw] max-[640px]:prose-img:rounded-none max-[640px]:prose-img:mx-[-1rem]"
+        set:html={html} />
+
+    </article>
+  </main>
 </Base>

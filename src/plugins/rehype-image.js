@@ -10,8 +10,17 @@ export default function rehypeImage() {
     visit(tree, node => {
       if (node.type === 'element' && node.tagName === 'img') {
         node.properties = node.properties || {};
-        node.properties.style = 'max-width:400px; margin:2rem auto; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); display:block;';
-        node.properties.class = 'mx-auto rounded-2xl';
+        node.properties.class = `
+          mx-auto 
+          rounded-xl 
+          my-6 
+          w-full 
+          max-w-2xl 
+          sm:max-w-[500px] 
+          max-[640px]:max-w-[75vw] 
+          max-[640px]:mx-[-1rem] 
+          max-[640px]:rounded-none
+        `;
       }
     });
   };

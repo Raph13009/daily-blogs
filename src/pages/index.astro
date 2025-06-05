@@ -20,40 +20,36 @@ const PAGE_SIZE = 10;
 ---
 <Base>
   <span slot="title">Mon Blog Minimal</span>
-  <div class="flex min-h-screen">
-    <!-- Bio mobile -->
-    <section class="md:hidden w-full px-4 pt-8 pb-4">
-      <h1 class="text-2xl font-serif font-semibold mb-2">Raphaël is building in public</h1>
-      <p class="text-base mb-1">Hey — I'm using this space to document what I work on, explore ideas, and share progress daily.</p>
-      <p class="text-sm text-[#b3a89c] mb-1">From AI tools to micro-startups, I like testing things fast, learning in public, and helping others do the same.</p>
-      <p class="text-sm text-[#b3a89c]">Currently building experiments, consulting occasionally, and staying curious. This blog is my trace.</p>
+  <main class="flex flex-col md:flex-row min-h-screen px-6 pt-12 pb-24 gap-24 max-w-6xl mx-auto">
+
+    <!-- 🧠 BIO INTRO (left desktop / top mobile) -->
+    <section class="w-full md:w-[40%] md:pr-12 flex flex-col justify-start pt-12">
+      <h1 class="text-3xl font-serif font-semibold text-[#3a3732] mb-4 leading-tight">
+        Raphaël is building in public
+      </h1>
+      <p class="text-[17px] text-[#3a3732] leading-relaxed mb-4">
+        Welcome to my corner of the web where I write about design, code, startups and just about anything that inspires me. I’m currently building experiments, consulting occasionally, and staying curious.
+      </p>
+      <p class="text-[15px] text-[#a1978f] leading-relaxed">
+        This blog is my trace. From AI tools to micro-startups, I like testing fast, learning in public, and helping others do the same.
+      </p>
     </section>
 
-    <!-- Bio desktop -->
-    <section class="hidden md:flex flex-col justify-start items-start pl-32 pr-12 mt-72 mb-12 w-[420px] max-lg:w-1/2">
-      <h1 class="text-3xl font-serif font-semibold mb-4">Raphaël is building in public</h1>
-      <p class="text-lg mb-2">Hey — I'm using this space to document what I work on, explore ideas, and share progress daily.</p>
-      <p class="text-base text-[#b3a89c] mb-2">From AI tools to micro-startups, I like testing things fast, learning in public, and helping others do the same.</p>
-      <p class="text-base text-[#b3a89c]">Currently building experiments, consulting occasionally, and staying curious. This blog is my trace.</p>
-    </section>
-
-    <!-- Bloc posts -->
-    <main class="flex-1 flex items-center justify-center px-8 max-md:px-2 max-md:py-8">
-      <div id="posts-block" class="w-full max-w-2xl bg-white rounded-2xl shadow border border-[#ece7e1] px-8 py-12 flex flex-col gap-0 mt-48 mb-12 pb-24 max-md:mt-4 max-md:px-2 max-md:py-6 max-md:mb-24">
-
-        <!-- Pagination info -->
-        <div class="flex items-center justify-between mb-6">
-          <div id="pagination-controls" class="flex items-center gap-2 text-[#b3a89c] text-sm"></div>
-        </div>
-
-        <!-- Liste des posts (remplie dynamiquement) -->
-        <ul id="posts-list" class="flex flex-col gap-6"></ul>
+    <!-- 🗂️ POSTS LIST -->
+    <section id="posts-block" class="w-full md:w-[50%] bg-[#fdfaf6] rounded-2xl shadow border border-[#ece7e1] px-6 py-8 mt-12">
+      <!-- Pagination info -->
+      <div class="flex items-center justify-between mb-6">
+        <div id="pagination-controls" class="flex items-center gap-2 text-[#b3a89c] text-sm"></div>
       </div>
-    </main>
-  </div>
-  <footer class="w-full text-center text-sm text-gray-400 py-8 mt-16 select-none">Contact: raphaellevy027@gmail.com</footer>
 
-  <!-- Données injectées via attribut HTML safe -->
+      <!-- Liste des posts -->
+      <ul id="posts-list" class="flex flex-col gap-6"></ul>
+    </section>
+  </main>
+
+  <footer class="w-full text-center text-sm text-gray-400 py-12 select-none">Contact: raphaellevy027@gmail.com</footer>
+
+  <!-- Données JSON -->
   <div id="posts-data" data-json={JSON.stringify(posts).replaceAll('"', '&quot;')} hidden></div>
 
   <!-- Script pagination -->
@@ -75,7 +71,7 @@ const PAGE_SIZE = 10;
 
       const list = document.getElementById('posts-list');
       list.innerHTML = paginated.map(post => `
-        <li class="hover:bg-[#f7f3ef] rounded-xl px-4 py-4 transition-all">
+        <li class="hover:bg-[#f7f3ef] rounded-xl px-5 py-5 transition-all">
           <a href="/blog/${post.slug}" class="block">
             <div class="flex flex-col gap-1">
               <span class="text-xs text-[#b3a89c]">${post.date}</span>
