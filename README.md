@@ -1,6 +1,6 @@
 # 🧪 Astro Blog (lightweight)
 
-Yo. This is a dumb simple blog I made using [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).  
+Yo. This is a simple blog I made using [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).  
 
 ## 🚀 How to start this thing
 
