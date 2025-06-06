@@ -1,7 +1,7 @@
 ---
 title: "The Startup Designer"
 description: "Navigating the chaos, crafting the future"
-date: "2025-03-10"
+date: "2025-03-02"
 ---
 
 # The Startup Designer

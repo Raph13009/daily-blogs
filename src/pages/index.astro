@@ -14,7 +14,7 @@ const posts = postFiles.map(filename => {
     slug: filename.replace(/\.md$/, ''),
     ...data,
   };
-});
+}).sort((a, b) => new Date(b.date) - new Date(a.date)); // tri du plus récent au plus ancien
 
 const PAGE_SIZE = 10;
 ---
@@ -25,25 +25,26 @@ const PAGE_SIZE = 10;
     <!-- 🧠 BIO INTRO (left desktop / top mobile) -->
     <section class="w-full md:w-[40%] md:pr-12 flex flex-col justify-start pt-12">
       <h1 class="text-3xl font-serif font-semibold text-[#3a3732] mb-4 leading-tight">
-        Raphaël is building in public
+        Raphaël is figuring things out
       </h1>
       <p class="text-[17px] text-[#3a3732] leading-relaxed mb-4">
-        Welcome to my corner of the web where I write about design, code, startups and just about anything that inspires me. I’m currently building experiments, consulting occasionally, and staying curious.
+        This is my space to share what I’m learning and building. Currently I'm into small front-end projects, bits of code, and simple logic to automate or simplify real tasks.
       </p>
       <p class="text-[15px] text-[#a1978f] leading-relaxed">
-        This blog is my trace. From AI tools to micro-startups, I like testing fast, learning in public, and helping others do the same.
+        This blog is my trace. I write, test, sometimes break things, and figure it out as I go.
       </p>
     </section>
 
     <!-- 🗂️ POSTS LIST -->
     <section id="posts-block" class="w-full md:w-[50%] bg-[#fdfaf6] rounded-2xl shadow border border-[#ece7e1] px-6 py-8 mt-12">
-      <!-- Pagination info -->
-      <div class="flex items-center justify-between mb-6">
-        <div id="pagination-controls" class="flex items-center gap-2 text-[#b3a89c] text-sm"></div>
-      </div>
+      <!-- Pagination (top) -->
+      <div id="pagination-top" class="flex items-center justify-between mb-6 text-[#b3a89c] text-sm"></div>
 
       <!-- Liste des posts -->
       <ul id="posts-list" class="flex flex-col gap-6"></ul>
+
+      <!-- Pagination (bottom) -->
+      <div id="pagination-bottom" class="flex items-center justify-between mt-6 text-[#b3a89c] text-sm"></div>
     </section>
   </main>
 
@@ -83,14 +84,17 @@ const PAGE_SIZE = 10;
       `).join('');
 
       const totalPages = Math.ceil(posts.length / PAGE_SIZE);
-      const controls = document.getElementById('pagination-controls');
+      const top = document.getElementById('pagination-top');
+      const bottom = document.getElementById('pagination-bottom');
       const prevPage = page > 1 ? `<a href="?page=${page - 1}" class="hover:text-[#3a3732]">&larr;</a>` : `<span class="opacity-30">&larr;</span>`;
       const nextPage = page < totalPages ? `<a href="?page=${page + 1}" class="hover:text-[#3a3732]">&rarr;</a>` : `<span class="opacity-30">&rarr;</span>`;
-      controls.innerHTML = `
+      const block = `
         ${prevPage}
         <span>${start + 1}–${Math.min(end, posts.length)} of ${posts.length} posts</span>
         ${nextPage}
       `;
+      top.innerHTML = block;
+      bottom.innerHTML = block;
     }
 
     renderPosts();

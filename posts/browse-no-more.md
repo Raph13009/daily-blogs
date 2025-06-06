@@ -1,7 +1,7 @@
 ---
 title: "Browse No More"
 description: "The magic we once had with browsing the web is dwindling."
-date: "2025-03-13"
+date: "2025-03-01"
 image: "/browse-no-more.png"
 ---
 
