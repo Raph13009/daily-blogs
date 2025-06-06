@@ -1,8 +1,6 @@
-# 🧪 Astro Blog (lightweight & chill)
+# 🧪 Astro Blog (lightweight)
 
 Yo. This is a dumb simple blog I made using [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).  
-Kinda inspired by Paul Stamatiou’s vibe.  
-Just a space to drop stuff, nothing fancy.
 
 ## 🚀 How to start this thing
 
@@ -27,7 +25,7 @@ Then write whatever you want in markdown.
 
 3. Boom. It shows up on the homepage.
 
-## 🧱 Folder vibes
+## 🧱 Folder
 
 - src/pages/index.astro → homepage with your posts
 - src/pages/blog/[slug].astro → for individual post pages
