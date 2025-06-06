@@ -1,42 +1,44 @@
-# Blog Astro Minimaliste
+# 🧪 Astro Blog (lightweight & chill)
 
-Ce projet est un blog statique inspiré par Paul Stamatiou, construit avec [Astro](https://astro.build/) et [Tailwind CSS](https://tailwindcss.com/).
+Yo. This is a dumb simple blog I made using [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).  
+Kinda inspired by Paul Stamatiou’s vibe.  
+Just a space to drop stuff, nothing fancy.
 
-## 🚀 Lancer le projet
+## 🚀 How to start this thing
 
-```bash
-npm install
-npm run dev
-```
+npm install  
+npm run dev  
 
-## ✍️ Ajouter un article
+Then open localhost:4321 in your browser.
 
-1. Crée un fichier `.md` dans le dossier `posts/`.
-2. Utilise ce modèle de frontmatter :
+## ✍️ Writing a new post
 
-```md
+1. Drop a `.md` file inside the `posts/` folder.
+2. Paste this at the top:
+
 ---
-title: "Titre de l'article"
-description: "Courte description de l'article."
-date: "2025-03-13"
-image: "/chemin/vers/image.png" # optionnel
+title: "The post title"  
+description: "Short vibe for the post"  
+date: "2025-03-13"  
+image: "/path/to/image.png" # optional  
 ---
 
-Contenu en markdown…
-```
+Then write whatever you want in markdown.
 
-3. Le post apparaîtra automatiquement sur la page d’accueil.
+3. Boom. It shows up on the homepage.
 
-## 🗂️ Structure
-- `src/pages/index.astro` : Page d’accueil (bio + liste d’articles)
-- `src/pages/blog/[slug].astro` : Page individuelle d’article
-- `posts/` : Tous les articles au format Markdown
+## 🧱 Folder vibes
 
-## 🌐 Déploiement Vercel
+- src/pages/index.astro → homepage with your posts
+- src/pages/blog/[slug].astro → for individual post pages
+- posts/ → where all your markdown lives
 
-1. Poussez ce repo sur GitHub.
-2. Connectez-le à [Vercel](https://vercel.com/).
-3. Vercel détectera Astro automatiquement.
+## ☁️ Going live (with Vercel)
 
-## 📄 Licence
-MIT 
+1. Push this repo to GitHub.
+2. Hook it up to [Vercel](https://vercel.com/).
+3. It auto-detects Astro and just works.
+
+## 🪪 License
+
+MIT. You can do whatever.
