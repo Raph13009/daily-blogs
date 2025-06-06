@@ -24,26 +24,15 @@ body {
   pointer-events: none;
 }
 
-/* 🔧 Image seule en fullwidth */
+/* 🌐 Images fullwidth sur mobile */
 img.fullwidth {
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(-1 * (100vw - 100%) / 2);
   margin-right: calc(-1 * (100vw - 100%) / 2);
-  margin-top: 1.5rem;      /* moins d’espace */
-  margin-bottom: 1.25rem;  /* idem */
+  margin-top: 1.5rem;
+  margin-bottom: 1.25rem;
   display: block;
-}
-
-@media (min-width: 640px) {
-  img.fullwidth {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0.75rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
 }
 
 /* 🖼️ Bloc <figure> pour image + caption */
@@ -51,8 +40,8 @@ figure.image-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1.25rem;    /* réduit l’espace AVANT image */
-  margin-bottom: 1.25rem; /* réduit l’espace APRÈS image */
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 figure.image-block img.fullwidth {
@@ -61,20 +50,25 @@ figure.image-block img.fullwidth {
   margin-left: calc(-1 * (100vw - 100%) / 2);
   margin-right: calc(-1 * (100vw - 100%) / 2);
   display: block;
-  margin-bottom: 0.4rem;  /* espace image → caption */
+  margin-bottom: 0.4rem;
 }
 
-@media (min-width: 640px) {
+/* 🖥️ Desktop : image centrée, large mais propre */
+@media (min-width: 1024px) {
   figure.image-block img.fullwidth {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    width: calc(100% + 8rem);
+    max-width: calc(100% + 8rem);
+    margin-left: -4rem;
+    margin-right: -4rem;
     border-radius: 0.75rem;
     margin-bottom: 0.4rem;
+    display: block;
   }
 }
 
-/* ✏️ Caption sous l'image */
+
+
+/* ✏️ Caption sous image */
 figure.image-block figcaption.caption {
   font-size: 0.875rem;
   color: #B3A293;
@@ -82,4 +76,31 @@ figure.image-block figcaption.caption {
   font-weight: 600;
   font-style: normal;
   line-height: 2;
+}
+
+/* 💡 Code blocks: light theme with stronger contrast */
+pre {
+  background: #f0eaea;
+  color: #1f1f1f;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+/* Code font */
+code {
+  font-family: 'Fira Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Inline code inside paragraphs */
+p code {
+  background: #f0eaea;
+  color: #111;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
 }

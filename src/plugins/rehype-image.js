@@ -5,7 +5,13 @@ export default function rehypeImage() {
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName === 'img') {
         const alt = node.properties?.alt || '';
-        const image = { ...node, properties: { ...node.properties, class: 'fullwidth' } };
+        const image = {
+          ...node,
+          properties: {
+            ...node.properties,
+            class: 'fullwidth large-desktop'
+          }
+        };
 
         const figureNode = {
           type: 'element',
