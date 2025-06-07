@@ -1,7 +1,7 @@
 ---
 title: "The Problem Was the Images..."
 description: "After hours of fiddling with padding and layout settings, I realized the issue wasn’t what I thought."
-date: "2025-06-08"
+date: "2025-06-11"
 image: "/images/layout-debug.png"
 ---
 

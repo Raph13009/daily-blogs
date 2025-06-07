@@ -1,7 +1,7 @@
 ---
 title: "Why My Code Blocks Had No Style (and How I Fixed It)"
 description: "rehype-prism-plus was installed, but nothing changed. Here’s why — and what finally worked."
-date: "2025-06-07"
+date: "2025-06-10"
 ---
 
 # How I generate a style to my code elements in my blogs

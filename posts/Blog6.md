@@ -1,7 +1,7 @@
 ---
 title: "Fonts Aren’t Free?!"
 description: "I thought everything in code was free — turns out, not all fonts are."
-date: "2025-06-09"
+date: "2025-06-12"
 image: "/images/font-struggle.png"
 ---
 
