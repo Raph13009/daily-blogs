@@ -9,20 +9,22 @@ export default function rehypeImage() {
           ...node,
           properties: {
             ...node.properties,
-            class: 'fullwidth large-desktop'
+            class: 'w-full object-cover sm:rounded-lg'
           }
         };
 
         const figureNode = {
           type: 'element',
-          tagName: 'figure',
-          properties: { class: 'image-block' },
+          tagName: 'div',
+          properties: { 
+            class: 'w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] sm:static sm:ml-0 sm:mr-0 sm:w-full sm:max-w-2xl sm:px-0 mb-2'
+          },
           children: [
             image,
             {
               type: 'element',
-              tagName: 'figcaption',
-              properties: { class: 'caption' },
+              tagName: 'p',
+              properties: { class: 'text-sm text-[#a09892] mb-8 px-8 sm:px-0 text-center' },
               children: [{ type: 'text', value: alt }]
             }
           ]
