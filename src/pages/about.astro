@@ -1,106 +1,82 @@
 ---
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import Base from '../layouts/Base.astro';
+import { remark } from 'remark';
+import rehypeRaw from 'rehype-raw';
+import rehypeStringify from 'rehype-stringify';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeImageDesktop from '../plugins/rehype-image-desktop.js';
+import rehypeImageMobile from '../plugins/rehype-image-mobile.js';
+
+// Lire le fichier about/about.md
+const filePath = './about/about.md';
+const fileContent = fs.readFileSync(filePath, 'utf-8');
+const { data, content } = matter(fileContent);
+
+// Process desktop
+const fileDesktop = await remark()
+  .use(remarkParse)
+  .use(remarkRehype, { allowDangerousHtml: true })
+  .use(rehypeRaw)
+  .use(rehypeImageDesktop)
+  .use(rehypeStringify)
+  .process(content);
+
+// Process mobile
+const fileMobile = await remark()
+  .use(remarkParse)
+  .use(remarkRehype, { allowDangerousHtml: true })
+  .use(rehypeRaw)
+  .use(rehypeImageMobile)
+  .use(rehypeStringify)
+  .process(content);
+
+const htmlDesktop = String(fileDesktop);
+const htmlMobile = String(fileMobile);
 ---
 
 <Base>
   <span slot="title">About</span>
   <div class="flex min-h-screen">
-    <!-- Contenu de la page About -->
-    <main class="flex-1 flex flex-col items-start justify-start ml-[420px] max-lg:ml-1/2 max-md:ml-0 px-8 py-24">
+    <main class="w-full flex flex-col items-center justify-start px-4 py-24">
       <div class="w-full max-w-2xl">
-        <!-- Titre -->
-        <h1 class="text-3xl font-serif font-semibold mb-6">Hey, I'm Raph 👋</h1>
+        <!-- Styles d'image desktop -->
+        <style>
+          figure.image-block {
+            width: calc(100% + 8rem);
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -4rem;
+            margin-right: -4rem;
+            padding-left: 0;
+            padding-right: 0;
+          }
 
-        <!-- Photo de profil -->
-        <img src="/images/profilePicture.jpg" alt="Photo de profil" class="w-full max-w-sm mb-12 shadow-sm rounded-lg" />
+          figure.image-block img.fullwidth {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
+          }
 
-        <!-- Présentation -->
-        <p class="text-base text-[#3a3a3a] mb-4">
-          I'm a tech enthusiast currently based between Paris and London, where I study and explore everything related to product, design, and systems. I’ve also lived in Montreal and San Francisco.
-        </p>
-        <p class="text-base text-[#3a3a3a] mb-4">
-          Outside of work, I’m passionate about windsurfing which is obviously super convenient when you live in Paris or London. Until I figure out how to sail the Seine, I’m compensating with padel. Let me know if you ever need a partner — I play on the right!
-        </p>
+          figure.image-block figcaption.caption {
+            font-size: 0.875rem;
+            color: #B3A293;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.75;
+            margin-top: 0.5rem;
+          }
+        </style>
 
-        <!-- Image windsurf full-width on mobile, centered on desktop -->
-        <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] sm:static sm:ml-0 sm:mr-0 sm:w-full sm:max-w-2xl sm:px-0 mb-2">
-          <img src="/images/windsurf.jpeg" alt="Me windsurfing" class="w-full object-cover sm:rounded-lg" />
-        </div>
-        <p class="text-sm text-[#a09892] mb-8 px-8 sm:px-0 text-center">Me windsurfing 🏄‍♂️</p>
+        <!-- Desktop -->
+        <article class="hidden sm:block text-base text-[#3a3a3a] leading-relaxed prose prose-lg max-w-none" set:html={htmlDesktop} />
 
-        <!-- Projets -->
-        <p class="text-base text-[#3a3a3a] mb-4">
-          For over a year, I’ve been working at Lazo, a B2B tech startup. I contribute across product and operations, refining the platform as it scales. Alongside that, I'm running BoostAi Consulting — a solo project where I experiment with AI tools and automation to help freelancers and small teams move faster.
-        </p>
-        <p class="text-base text-[#3a3a3a] mb-8">
-          I love exploring new ideas and sharing what I build.
-        </p>
-
-         <!-- Mon parcours atypique -->
-<h2 class="text-xl font-semibold mb-4 mt-12">From events to product</h2>
-<p class="text-base text-[#3a3a3a] mb-4">
-  Before working in tech, I spent a good amount of time in the event industry. I worked as head of waiter or event coordinator — I ran weddings, corporate gigs, and more. It’s not what I wanted to do forever, but I’m really glad I went through it. I learned a lot. Honestly, even today, when I go to a wedding, I still think about how the backstage is running. Can’t unsee it.
-</p>
-<p class="text-base text-[#3a3a3a] mb-4">
-I split my time between London and Paris — London for school, Paris for work (and because there’s always something happening there).</p>
-
-<!-- Ce que je fais chez Lazo -->
-<h2 class="text-xl font-semibold mb-4 mt-10">My job in a startup</h2>
-<p class="text-base text-[#3a3a3a] mb-4">
-  I’ve worked at <strong>Lazo</strong> for over a year now. It started small, and now I’m deeply involved in product and operations. I manage sprint cycles, define priorities, assign tasks to developers, and keep things moving across teams. It reminds me of event management sometimes: nothing goes exactly as planned, and that’s where I perform best.
-</p>
-<p class="text-base text-[#3a3a3a] mb-4">
-  My scope has grown as the team has. I’ve worked directly with the founders, collaborated with the growth team, and supported devs by structuring processes. I also helped roll out tools like Intercom, and trained customer success and marketing teams to adopt them.
-</p>
-
-<!-- Compétences et outils -->
-<h2 class="text-xl font-semibold mb-4 mt-10">Tools I work with</h2>
-<p class="text-base text-[#3a3a3a] mb-4">
-  I’ve designed interfaces in Figma (UX/UI), automated flows using Zapier and Notion databases, handled data with SQL, and recently started coding front-end features in JavaScript — mostly using AI as a sidekick. That journey also helped me understand GitHub and how to ship more confidently. You can find my code here: <a href="https://github.com/Raph13009" class="underline">github.com/Raph13009</a>.
-</p>
-
-<!-- BoostAi -->
-<h2 class="text-xl font-semibold mb-4 mt-10">BoostAi Consulting</h2>
-<p class="text-base text-[#3a3a3a] mb-4">
-  On the side, I’ve been developing a personal project called <a href="https://www.boostaiconsulting.com/" class="underline"><strong>Boostai Consulting</strong></a>.
-  I won't say it is a business for now but more a lab. I build things that are useful for freelancers and small teams: automated scripts for competitive intelligence, agents that look for job opportunities, tools that save people time.
-</p>
-<p class="text-base text-[#3a3a3a] mb-4">
-  I can’t go full-time on it for now and that’s fine. My goal isn’t profit. It’s learning, testing, and staying curious. And honestly, it’s already taught me way more than I expected.
-</p>
-
-<!-- Ma façon de bosser -->
-<h2 class="text-xl font-semibold mb-4 mt-10">How I work</h2>
-<p class="text-base text-[#3a3a3a] mb-4">
-  I wouldn’t call myself a dev or a designer — but I know enough to speak both languages and connect dots. What I enjoy the most is designing systems, organizing chaos, and shaping how people and tools interact.
-</p>
-
-<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] sm:static sm:ml-0 sm:mr-0 sm:w-full sm:max-w-2xl sm:px-0 mb-2">
-  <img src="/images/process-map.png" alt="How I think in system" class="w-full object-cover sm:rounded-lg" />
-</div>
-<p class="text-sm text-[#a09892] mb-8 px-8 sm:px-0 text-center">How I think in systems</p>
-
-
-<p class="text-base text-[#3a3a3a] mb-4">
-  I’m also very reactive to pressure. The more intense the deadline, the more I go into “flow mode”. Daily coffee, occasional Red Bull, no headphones though (they just throw me off), I’ve pulled entire nights debugging Python scripts or redesigning interfaces just to get something out the door. I like that kind of intensity.
-</p>
-
-<!-- Vie perso -->
-<h2 class="text-xl font-semibold mb-4 mt-10">Outside of work</h2>
-<p class="text-base text-[#3a3a3a] mb-4">
-  Most evenings, I’m either working on personal projects or cooking. I like doing real meals: tajines, lasagna — food that takes time. On weekends, I ride my bike or slow down a bit. I also try to read when I can, mostly during breaks or holidays.
-</p>
-<p class="text-base text-[#3a3a3a] mb-4">
-  And of course, I travel as much as I can. I have family in Asia, and going back there regularly feels essential.
-</p>
-
-<!-- Ce qui vient après -->
-<h2 class="text-xl font-semibold mb-4 mt-10">What’s next?</h2>
-<p class="text-base text-[#3a3a3a]">
-  No long-term plan for now. Maybe I’ll launch my own product. Maybe I’ll move back to the South of France, where I’m from. What matters most is that I keep learning, keep building, and keep moving forward.
-</p>
-
-
+        <!-- Mobile -->
+        <article class="sm:hidden text-base text-[#3a3a3a] leading-relaxed prose prose-lg max-w-none" set:html={htmlMobile} />
       </div>
     </main>
   </div>

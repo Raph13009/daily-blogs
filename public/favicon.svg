@@ -1,0 +1,53 @@
+<svg width="124" height="124" viewBox="0 0 124 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_693_9020)">
+<rect width="124" height="124" rx="18" fill="#F7F3EF"/>
+<g opacity="0.15">
+<line x1="8" y1="6.5" x2="116" y2="6.5" stroke="black"/>
+<line x1="8" y1="10.5" x2="116" y2="10.5" stroke="black"/>
+<line x1="8" y1="14.5" x2="116" y2="14.5" stroke="black"/>
+<line x1="8" y1="18.5" x2="116" y2="18.5" stroke="black"/>
+<line x1="8" y1="22.5" x2="116" y2="22.5" stroke="black"/>
+<line x1="8" y1="26.5" x2="116" y2="26.5" stroke="black"/>
+<line x1="8" y1="30.5" x2="116" y2="30.5" stroke="black"/>
+<line x1="8" y1="34.5" x2="116" y2="34.5" stroke="black"/>
+<line x1="8" y1="38.5" x2="116" y2="38.5" stroke="black"/>
+<line x1="8" y1="42.5" x2="116" y2="42.5" stroke="black"/>
+<line x1="8" y1="46.5" x2="116" y2="46.5" stroke="black"/>
+<line x1="8" y1="50.5" x2="116" y2="50.5" stroke="black"/>
+<line x1="8" y1="54.5" x2="116" y2="54.5" stroke="black"/>
+<line x1="8" y1="58.5" x2="116" y2="58.5" stroke="black"/>
+<line x1="8" y1="62.5" x2="116" y2="62.5" stroke="black"/>
+<line x1="8" y1="66.5" x2="116" y2="66.5" stroke="black"/>
+<line x1="8" y1="70.5" x2="116" y2="70.5" stroke="black"/>
+<line x1="8" y1="74.5" x2="116" y2="74.5" stroke="black"/>
+<line x1="8" y1="78.5" x2="116" y2="78.5" stroke="black"/>
+<line x1="8" y1="82.5" x2="116" y2="82.5" stroke="black"/>
+<line x1="8" y1="86.5" x2="116" y2="86.5" stroke="black"/>
+<line x1="8" y1="90.5" x2="116" y2="90.5" stroke="black"/>
+<line x1="8" y1="94.5" x2="116" y2="94.5" stroke="black"/>
+<line x1="8" y1="98.5" x2="116" y2="98.5" stroke="black"/>
+<line x1="8" y1="102.5" x2="116" y2="102.5" stroke="black"/>
+<line x1="8" y1="106.5" x2="116" y2="106.5" stroke="black"/>
+<line x1="8" y1="110.5" x2="116" y2="110.5" stroke="black"/>
+<line x1="8" y1="114.5" x2="116" y2="114.5" stroke="black"/>
+</g>
+<g filter="url(#filter0_d_693_9020)">
+<path d="M29.7081 107V16.3801H68.371C72.3551 16.3801 76.0141 16.8679 79.3478 17.8436C82.6815 18.8194 85.568 20.4862 88.0073 22.8442C90.4466 25.1209 92.3167 28.2107 93.6177 32.1135C95 36.0164 95.6911 40.9357 95.6911 46.8713C95.6911 50.6115 95.3659 53.8639 94.7154 56.6285C94.0649 59.393 93.1705 61.751 92.0322 63.7025C90.9751 65.5726 89.6742 67.1581 88.1293 68.4591C86.6657 69.76 85.0801 70.8984 83.3726 71.8741L99.1061 107H75.079L62.3947 75.777C61.6629 75.777 60.8904 75.777 60.0773 75.777C59.3455 75.777 58.6138 75.777 57.882 75.777C57.1502 75.777 56.3777 75.777 55.5646 75.777C54.8328 75.777 54.1011 75.777 53.3693 75.777V107H29.7081ZM53.3693 56.9944H64.1022C65.4031 56.9944 66.5415 56.8318 67.5172 56.5065C68.4929 56.1 69.306 55.4901 69.9565 54.677C70.6883 53.8639 71.2168 52.8476 71.542 51.6279C71.8673 50.327 72.0299 48.7821 72.0299 46.9933C72.0299 45.2044 71.8673 43.7002 71.542 42.4806C71.2168 41.2609 70.6883 40.3258 69.9565 39.6754C69.306 38.9436 68.4929 38.4151 67.5172 38.0898C66.5415 37.7646 65.4031 37.602 64.1022 37.602H53.3693V56.9944Z" fill="#C75745"/>
+</g>
+</g>
+<rect x="4" y="4" width="116" height="116" rx="14" stroke="#C75745" stroke-width="8"/>
+<defs>
+<filter id="filter0_d_693_9020" x="29.707" y="16.3799" width="73.5563" height="92.0061" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4.1579" dy="1.38596"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.445833 0 0 0 0 0.200374 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_693_9020"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_693_9020" result="shape"/>
+</filter>
+<clipPath id="clip0_693_9020">
+<rect width="124" height="124" rx="18" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -9,31 +9,35 @@ const { pathname } = Astro.url;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raphael Levy</title>
     <meta name="description" content="Le blog minimaliste de Raphaël, design, code, inspiration, et plus encore." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   </head>
   <body class="bg-[#f7f3ef] min-h-screen font-sans text-[#3a3732] transition-colors duration-300 flex flex-col min-h-screen">
     <div class="flex-1 flex">
       <aside class="hidden md:flex fixed left-0 top-0 h-full w-20 flex-col justify-center items-center py-8 px-2 bg-[#f3eee8] border-r border-[#ece7e1] z-10">
         <div class="flex flex-col gap-8 items-center justify-center h-full">
-          <a href="/" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname === '/' ? 'bg-[#ece7e1] shadow-sm ring-2 ring-green-900/10' : 'hover:bg-[#ece7e1]'}`} aria-label="Home">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-green-900">
+          <a href="/" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname === '/' ? 'bg-[#ece7e1] shadow-sm ring-2 ring-[#C75745]/10' : 'hover:bg-[#ece7e1]'}`} aria-label="Home">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`w-7 h-7 ${pathname === '/' ? 'text-[#C75745]' : 'text-[#3a3732]'}`}>
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 10.5v9.75A2.25 2.25 0 006.75 22.5h2.25m6 0h2.25a2.25 2.25 0 002.25-2.25V10.5M9.75 22.5v-6h4.5v6" />
             </svg>
           </a>
-          <a href="/about" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname.startsWith('/about') ? 'bg-[#ece7e1] shadow-sm ring-2 ring-green-900/10' : 'hover:bg-[#ece7e1]'}`} aria-label="About">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#3a3732]">
+          <a href="/about" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname.startsWith('/about') ? 'bg-[#ece7e1] shadow-sm ring-2 ring-[#C75745]/10' : 'hover:bg-[#ece7e1]'}`} aria-label="About">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`w-7 h-7 ${pathname.startsWith('/about') ? 'text-[#C75745]' : 'text-[#3a3732]'}`}>
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 19.5a7.5 7.5 0 1115 0v.75A2.25 2.25 0 0117.25 22.5h-10.5A2.25 2.25 0 014.5 20.25v-.75z" />
             </svg>
           </a>
         </div>
       </aside>
       <nav class="md:hidden fixed bottom-0 left-0 w-full h-16 flex flex-row justify-center items-center gap-8 bg-[#f3eee8] border-t border-[#ece7e1] z-20">
-        <a href="/" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname === '/' ? 'bg-[#ece7e1] shadow-sm ring-2 ring-green-900/10' : 'hover:bg-[#ece7e1]'}`} aria-label="Home">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-green-900">
+        <a href="/" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname === '/' ? 'bg-[#ece7e1] shadow-sm ring-2 ring-[#C75745]/10' : 'hover:bg-[#ece7e1]'}`} aria-label="Home">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`w-7 h-7 ${pathname === '/' ? 'text-[#C75745]' : 'text-[#3a3732]'}`}>
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 10.5v9.75A2.25 2.25 0 006.75 22.5h2.25m6 0h2.25a2.25 2.25 0 002.25-2.25V10.5M9.75 22.5v-6h4.5v6" />
           </svg>
         </a>
-        <a href="/about" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname.startsWith('/about') ? 'bg-[#ece7e1] shadow-sm ring-2 ring-green-900/10' : 'hover:bg-[#ece7e1]'}`} aria-label="About">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#3a3732]">
+        <a href="/about" class={`flex items-center justify-center w-12 h-12 rounded-xl transition-all ${pathname.startsWith('/about') ? 'bg-[#ece7e1] shadow-sm ring-2 ring-[#C75745]/10' : 'hover:bg-[#ece7e1]'}`} aria-label="About">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`w-7 h-7 ${pathname.startsWith('/about') ? 'text-[#C75745]' : 'text-[#3a3732]'}`}>
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 19.5a7.5 7.5 0 1115 0v.75A2.25 2.25 0 0117.25 22.5h-10.5A2.25 2.25 0 014.5 20.25v-.75z" />
           </svg>
         </a>
