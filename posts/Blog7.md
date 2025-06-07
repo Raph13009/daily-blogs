@@ -1,7 +1,7 @@
 ---
 title: "From ChatGPT to Adobe Color"
 description: "I used to use ChatGPT to generate color palettes. Now I’ve found something even better."
-date: "2025-06-07"
+date: "2025-06-13"
 image: "/images/adobe-color.png"
 ---
 
