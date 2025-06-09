@@ -22,7 +22,7 @@ Turns out: the plugin only works when your Markdown blocks are written with trip
 
 This works: `.selector { margin: auto; color: red }`
 
-But this doesn't: `.selector { margin: auto; }`
+But this doesn't: `.selector { margin: auto; }` 
 
 &nbsp;
 
