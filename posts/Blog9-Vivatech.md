@@ -24,6 +24,7 @@ layout: ../../layouts/BlogLayout.astro
 
   <p>I also discovered <strong>Scaleway</strong>, a European cloud hosting company. Basically, they help you store and run your data online, like AWS or Google Cloud. What’s cool is that they’re based in Europe, so they follow European rules and data privacy laws. I think they’re still growing, but I love the idea of a local alternative. If I need to host data in the future, I would 100% try them.</p>
 
+  ![Scaleway stand](/images/Scaleway.png)
 
 
   <h2 class="text-xl font-semibold mb-4 mt-10">A Disappointing Chat with AWS</h2>
