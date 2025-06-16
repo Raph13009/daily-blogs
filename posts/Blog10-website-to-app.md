@@ -35,6 +35,9 @@ layout: ../../layouts/BlogLayout.astro
 
   &nbsp;
 
+  ![Next.js vs Flutter](/images/FluttervsReact.png)
+
+
   <h2 class="text-xl font-semibold mb-4 mt-10">How I could build the app later</h2>
 
   <p>If the project works and we want to build a real mobile app, there are a few options I'm keeping in mind:</p>
@@ -68,5 +71,4 @@ This could be a smoother path, since both use React. I wouldn’t reuse everythi
 
   <p>If the project grows and people use it, then we can invest time and money into a real mobile app. But I don’t want to overbuild something that’s still in early validation.</p>
 
-  ![Next.js vs Flutter](/images/FluttervsReact.png)
 </BlogContent>
