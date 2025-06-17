@@ -1,7 +1,7 @@
 ---
 title: "Why I Quit Lovable and Built My Website from Scratch"
 description: "Lovable was fast, but I needed something clean, personal, and fully mine. Here's how I built my Astro site in one week."
-date: "2025-06-25"
+date: "2025-06-05"
 image: "/images/myHome.png"
 layout: ../../layouts/BlogLayout.astro
 ---
