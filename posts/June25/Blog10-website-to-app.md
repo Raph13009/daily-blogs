@@ -71,4 +71,7 @@ This could be a smoother path, since both use React. I wouldn’t reuse everythi
 
   <p>If the project grows and people use it, then we can invest time and money into a real mobile app. But I don’t want to overbuild something that’s still in early validation.</p>
 
+
+
+
 </BlogContent>

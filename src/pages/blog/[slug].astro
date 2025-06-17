@@ -11,14 +11,55 @@ import remarkRehype from 'remark-rehype';
 import rehypeImageDesktop from '../../plugins/rehype-image-desktop.js';
 import rehypeImageMobile from '../../plugins/rehype-image-mobile.js';
 
+function findPostFile(slug) {
+  const postsDirectory = './posts';
+  let foundPath = null;
+
+  function searchInDirectory(dir) {
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+      const fullPath = path.join(dir, file);
+      const stat = fs.statSync(fullPath);
+      if (stat.isDirectory()) {
+        searchInDirectory(fullPath);
+      } else if (path.basename(file, '.md') === slug) {
+        foundPath = fullPath;
+        return;
+      }
+    }
+  }
+
+  searchInDirectory(postsDirectory);
+  return foundPath;
+}
+
 export async function getStaticPaths() {
   const postsDirectory = './posts';
-  const postFiles = fs.readdirSync(postsDirectory).filter(f => f.endsWith('.md'));
-  return postFiles.map(filename => ({ params: { slug: filename.replace(/\.md$/, '') } }));
+  const posts = [];
+
+  function traverseDirectory(dir) {
+    const files = fs.readdirSync(dir);
+    files.forEach(file => {
+      const fullPath = path.join(dir, file);
+      const stat = fs.statSync(fullPath);
+      if (stat.isDirectory()) {
+        traverseDirectory(fullPath);
+      } else if (file.endsWith('.md')) {
+        const slug = path.basename(file, '.md');
+        posts.push({ params: { slug } });
+      }
+    });
+  }
+
+  traverseDirectory(postsDirectory);
+  return posts;
 }
 
 const { slug } = Astro.params;
-const filePath = `./posts/${slug}.md`;
+const filePath = findPostFile(slug);
+if (!filePath) {
+  return Astro.redirect('/404');
+}
 const fileContent = fs.readFileSync(filePath, 'utf-8');
 const { data, content } = matter(fileContent);
 
@@ -116,4 +157,4 @@ const htmlMobile = String(fileMobile);
       </div>
     </main>
   </div>
-</Base>
+</Base> 

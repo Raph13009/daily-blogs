@@ -1,7 +1,7 @@
 ---
-title: "How I Converted Messy PDFs to Excel with GPT Vision"
-description: "Tried OCR with Python, failed, then used GPT-4 Vision to convert PDF certificates into clean Excel files. Here’s the full journey, code-free and API-powered."
-date: "2025-06-20"
+title: "How I Converted Messy PDFs to Excel"
+description: "Tried OCR with full Python, not 100% reliable, then used GPT-4 Vision to convert PDF certificates into clean Excel files. Here’s the full journey, code-free and API-powered."
+date: "2025-06-17"
 image: "/images/OCR.png"
 layout: ../../layouts/BlogLayout.astro
 ---
@@ -77,6 +77,7 @@ layout: ../../layouts/BlogLayout.astro
 
   &nbsp;
 
+<div class="code-wrapper">
 <pre><code class="language-python">
 import os
 import json
@@ -175,26 +176,27 @@ def main():
         print("📂 No PNG files found in input_png/")
         return
 
-    for png_path in png_files:
+for png_path in png_files:
         start = time.time()
         print(f"\n🔍 Processing {png_path.name}...")
 
-        response_text = process_image(png_path)
+response_text = process_image(png_path)
         if not response_text:
             continue
 
-        txt_path = Path(OUTPUT_DIR) / f"{png_path.stem}_raw.txt"
+txt_path = Path(OUTPUT_DIR) / f"{png_path.stem}_raw.txt"
         with open(txt_path, "w", encoding="utf-8") as f:
             f.write(response_text)
 
-        data = parse_gpt_response(response_text)
+data = parse_gpt_response(response_text)
         if not data:
             continue
 
-        excel_path = Path(OUTPUT_DIR) / f"{png_path.stem}_gpt4o.xlsx"
+excel_path = Path(OUTPUT_DIR) / f"{png_path.stem}_gpt4o.xlsx"
         save_excel(data, excel_path)
         print(f"✅ Done: {excel_path.name} ({time.time() - start:.1f}s)")
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+     main()
 </code></pre>
+</div>
