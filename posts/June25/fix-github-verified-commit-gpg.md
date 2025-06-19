@@ -1,7 +1,7 @@
 ---
 title: "Fixing the GitHub Verified Commit Issue"
 description: "My commits weren’t showing as Verified. Here's how I solved it using GPG and a proper setup."
-date: "2025-06-IDK"
+date: "2025-06-19"
 ---
 
 **Fixing the GitHub Verified Commit Issue**
