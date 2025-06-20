@@ -1,7 +1,7 @@
 ---
 title: "How Airbnb’s AI Icons Made Me Rethink UI Design"
 description: "Airbnb dropped a game-changing tool: AI-generated, open-source icons. Here’s how I’m already using them in my designs."
-date: "2025-06-09"
+date: "2025-06-20"
 image: "/images/airbnb-icons.png"
 layout: ../../layouts/BlogLayout.astro
 ---
