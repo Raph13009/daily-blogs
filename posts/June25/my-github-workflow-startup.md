@@ -12,10 +12,16 @@ layout: ../../layouts/BlogLayout.astro
 
 <p>We have a shared repository for our startup’s website. It includes two main branches:</p>
 
+&nbsp;
+
 <p>- <strong>main</strong>: this is our live production version, the one visitors actually see</p>
 <p>- <strong>staging</strong>: this is used for testing features before pushing them live. We also have a staging URL linked to this branch.</p>
 
+&nbsp;
+
 <p>Before, I was doing things a bit chaotically. Sometimes I would edit files directly on GitHub, or push untested changes to staging.</p>
+
+&nbsp;
 
 <p>Now, I follow a simple and safe process every time I need to make an update:</p>
 
@@ -40,11 +46,15 @@ layout: ../../layouts/BlogLayout.astro
 
 <p>For any startup or solo project, it’s easy to take shortcuts. But in the long run, <strong>a structured Git workflow improves collaboration and avoids mistakes</strong>.</p>
 
+&nbsp;
+
 <p>It also shows you’re able to ship features while thinking about:</p>
 
 <p>- **Time to market** (you don’t waste time fixing broken things later)</p>
 <p>- **UX** (you avoid bugs on production)</p>
 <p>- **Scalability** (other team members can follow your logic)</p>
+
+&nbsp;
 
 <p>It might look simple, but this kind of small discipline makes a big difference — especially if you plan to work in tech or manage product teams.</p>
 
