@@ -50,9 +50,9 @@ layout: ../../layouts/BlogLayout.astro
 
 <p>It also shows you’re able to ship features while thinking about:</p>
 
-<p>- **Time to market** (you don’t waste time fixing broken things later)</p>
-<p>- **UX** (you avoid bugs on production)</p>
-<p>- **Scalability** (other team members can follow your logic)</p>
+<p>- Time to market (you don’t waste time fixing broken things later)</p>
+<p>- UX (you avoid bugs on production)</p>
+<p>- Scalability (other team members can follow your logic)</p>
 
 &nbsp;
 
