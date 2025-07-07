@@ -38,9 +38,9 @@ layout: ../../layouts/BlogLayout.astro
 
 <h2 class="text-xl font-semibold mb-4 mt-10">What I Learned (Business Perspective)</h2>
 
-<p>- These tools are perfect for **MVP content testing**: low cost, fast iteration, and decent quality.</p>
-<p>- You still need a clear **positioning** to make the videos work — the AI doesn’t replace strategy.</p>
-<p>- The best value is probably in **time to market**: going from idea to test ad in less than 10 minutes is a huge win.</p>
+<p>- These tools are perfect for <strong>MVP content testing</strong>: low cost, fast iteration, and decent quality.</p>
+<p>- You still need a clear <strong>positioning</strong> to make the videos work — the AI doesn’t replace strategy.</p>
+<p>- The best value is probably in <strong>time to market</strong>: going from idea to test ad in less than 10 minutes is a huge win.</p>
 <p>- The videos are okay for **paid ads** (especially retargeting), but not yet ideal for top-tier branding.</p>
 <p>- Like with any automation, it’s about **ROI**: if you can validate an angle with 10 € of media spend, it’s worth it.</p>
 
