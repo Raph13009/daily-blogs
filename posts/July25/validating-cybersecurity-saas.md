@@ -12,7 +12,7 @@ layout: ../../layouts/BlogLayout.astro
 
 &nbsp;
 
-<p>I’ve had a few long calls, including one with the founder of a cybersecurity company who’s been in the game for over 30 years. Honestly, I felt a bit out of my depth. I’m not from the industry, and staying credible in these conversations is hard — but necessary.</p>
+<p>I’ve had a few long calls, including one with the founder of a cybersecurity company who’s been in the game for over 30 years. Honestly, I felt a bit out of my depth. I’m not from the industry, and staying credible in these conversations is hard but necessary.</p>
 
 &nbsp;
 
@@ -24,7 +24,7 @@ layout: ../../layouts/BlogLayout.astro
 
 &nbsp;
 
-<p>I’m imagining a **personalized, automated dashboard**. Something that helps teams track how aligned they are with cybersecurity norms, and suggests what to fix. Not for engineers — for people in charge of governance, risk, and compliance (GRC).</p>
+<p>I’m imagining a personalized, automated dashboard. Something that helps teams track how aligned they are with cybersecurity norms, and suggests what to fix. Not for engineers for people in charge of governance, risk, and compliance (GRC).</p>
 
 &nbsp;
 
@@ -34,7 +34,7 @@ layout: ../../layouts/BlogLayout.astro
 
 &nbsp;
 
-<p>I’ve already contacted about ten GRC consultants. Some replied. Some didn’t. But the biggest learning so far is this: **I need to talk to real buyers** — not just experts. That means:</p>
+<p>I’ve already contacted about ten GRC consultants. Some replied. Some didn’t. But the biggest learning so far is this: I need to talk to real buyers not just experts. That means:</p>
 
 <p>– CTOs</p>
 <p>– Cyber agencies</p>
@@ -52,11 +52,11 @@ layout: ../../layouts/BlogLayout.astro
 
 &nbsp;
 
-<p>This project also reminds me of something important: **it’s okay to walk away** if the need isn’t there. Right now, I’m going all in — evenings, weekends, whatever it takes — but only as long as it makes sense.</p>
+<p>This project also reminds me of something important: it’s okay to walk away if the need isn’t there. Right now, I’m going all in — evenings, weekends, whatever it takes but only as long as it makes sense.</p>
 
 &nbsp;
 
-<p>Maybe I’ll find another partner. Maybe I’ll pivot. But at least I’ll have learned something real — not just launched another tool no one asked for.</p>
+<p>Maybe I’ll find another partner. Maybe I’ll pivot. But at least I’ll have learned something real not just launched another tool no one asked for.</p>
 
 &nbsp;
 
@@ -70,8 +70,8 @@ layout: ../../layouts/BlogLayout.astro
 
 &nbsp;
 
-<p>I’ll keep sharing what I learn. Cybersecurity may be a tough domain — but it’s also one of the most important ones to get right.</p>
+<p>I’ll keep sharing what I learn. Cybersecurity may be a tough domain but it’s also one of the most important ones to get right.</p>
 
 &nbsp;
 
-<p>If you work in GRC, compliance, or cyber — I’d love to talk. DM me.</p>
+<p>If you work in GRC, compliance, or cyber I’d love to talk. DM me.</p>
