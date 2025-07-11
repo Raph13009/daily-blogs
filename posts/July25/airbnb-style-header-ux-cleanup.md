@@ -1,7 +1,7 @@
 ---
 title: "How I Improved My Website Header UX (Inspired by Airbnb)"
 description: "I reworked my website’s header navigation to make it cleaner and more intuitive. Inspired by Airbnb, I simplified categories, resized icons, and fixed the social links UX."
-date: "2025-06-28"
+date: "2025-07-11"
 image: "/images/header-cleanup.png"
 layout: ../../layouts/BlogLayout.astro
 ---
