@@ -1,7 +1,7 @@
 ---
 title: "Design Smarter: How I Pick My Product Colors in 10 Minutes Flat"
 description: "I used to rely on AI to pick my brand colors… until Reddit roasted me. Here's how I now choose palettes like a designer, with Coolors and a killer Figma tool."
-date: "2025-06-25"
+date: "2025-07-16"
 image: "/images/colorTester.png"
 layout: ../../layouts/BlogLayout.astro
 ---

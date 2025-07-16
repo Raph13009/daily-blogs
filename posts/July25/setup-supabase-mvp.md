@@ -1,7 +1,7 @@
 ---
 title: "How I Set Up a Database for a Real MVP (Without Being a Dev)"
 description: "For the music startup I joined as CPO, I built the full database using Supabase and some AI help — with a focus on speed and clarity, not perfection."
-date: "2025-06-23"
+date: "2025-07-15"
 image: "/images/database-setup.png"
 layout: ../../layouts/BlogLayout.astro
 ---

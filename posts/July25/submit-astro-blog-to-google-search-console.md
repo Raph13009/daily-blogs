@@ -1,7 +1,7 @@
 ---
 title: "Submitting My Astro Blog to Google Search Console"
 description: "My blog wasn’t showing up on Google — turns out I forgot to generate and submit a sitemap. Here’s how I fixed it."
-date: "2025-06-20"
+date: "2025-07-14"
 image: "/images/sitemap-cover.png"
 layout: ../src/layouts/MarkdownPost.astro
 ---
